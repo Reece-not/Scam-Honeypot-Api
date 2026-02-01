@@ -48,7 +48,7 @@ def hello(payload: dict, x_api_key = Header(None)):
 
     stop_conversation = False
 
-    if session_data["turns"] >= 3:
+    if session_data["turns"] >= 5:
          stop_conversation = True
 
     if session_data["phones"] or session_data["upi_ids"] or session_data["urls"]:
