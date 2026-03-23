@@ -1,47 +1,61 @@
 # 🛡️ Scam Honeypot API (Agentic AI System)
 
-A secure, session-aware honeypot API designed to detect scam messages, safely interact with potential attackers, and extract actionable fraud intelligence.
+A secure, session-aware honeypot API designed to detect scam messages, safely engage with potential attackers, and extract actionable fraud intelligence.
 
 ---
 
-## 🚀 Project Overview
+## 🚀 Overview
 
-This project simulates a **honeypot system** for scam detection.
+This project implements an **agentic honeypot system** for scam detection.
 
-Instead of simply blocking suspicious messages, the system:
+Unlike traditional filters that block messages, this system:
 - Detects scam intent
-- Engages safely
-- Extracts intelligence
-- Maintains conversation context
+- Engages safely with the sender
+- Extracts intelligence (phone, URL, UPI)
+- Maintains multi-turn conversation context
 
 ---
 
 ## ⚙️ Features
 
-- 🔐 API Key Authentication (secure access)
-- 🧠 Scam Detection using rule-based logic
-- 🔍 Fraud Indicator Extraction:
+- 🔐 **API Key Authentication** (secure access)
+- 🧠 **Rule-based Scam Detection** (keyword + pattern logic)
+- 🔍 **Fraud Indicator Extraction**
   - Phone numbers
   - URLs
   - UPI IDs
-- 🔁 Session-based multi-turn conversation tracking
-- 🎭 Honeypot-style safe responses (no sensitive data exposure)
-- ⛔ Stop-condition logic to prevent infinite interaction
-- 🌐 Deployed API for real-world testing
+- 🔁 **Session-based Memory**
+  - Tracks multi-turn interactions
+- 🎭 **Honeypot Response Engine**
+  - Generates safe, non-sensitive replies
+- ⛔ **Stop Condition Logic**
+  - Prevents infinite engagement
+- 🌐 **Deployed Public API**
 
 ---
 
 ## 🧩 System Architecture
-User Message → API Endpoint → Authentication
-→ Scam Detection → Data Extraction → Session Memory
-→ Honeypot Response → JSON Output
 
+![Architecture Diagram](./images/architecture.png)
+
+### Flow Explanation
+
+1. **Message Input** – User/scammer sends message  
+2. **FastAPI Endpoint** – Request received (`/hello`)  
+3. **Authentication Layer** – API key validation  
+4. **Scam Detection Engine** – Keyword + pattern analysis  
+5. **Intelligence Extraction** – Extract phone, URL, UPI  
+6. **Session Memory Manager** – Store conversation state  
+7. **Honeypot Response Generator** – Create safe response  
+8. **Structured JSON Output** – Return response  
 
 ---
 
-## 📡 API Endpoint
+## 📡 API Usage
 
-**POST** `/hello`
+### Endpoint
+POST /hello
+
 
 ### Headers
 
@@ -58,11 +72,10 @@ x-api-key: YOUR_API_KEY
     "timestamp": "now"
   }
 }
-
 ```
-
-### Sample Responce 
-``` json
+---
+📤 Sample Response
+```json
 {
   "is_scam": true,
   "reply": "I’m not sure, can you explain more?",
@@ -75,46 +88,45 @@ x-api-key: YOUR_API_KEY
 }
 
 ```
+---
 
-{
-  "sessionId": "test123",
-  "message": {
-    "sender": "scammer",
-    "text": "Your account is blocked. Verify UPI immediately.",
-    "timestamp": "now"
-  }
-}
+🌐 Live API
+https://scam-honeypot-api-9axe.onrender.com/hello
+---
+
+📸 Screenshots
+Swagger UI
+API Response
+---
 
 🧠 Key Concepts
-Honeypot Design: Engages attackers instead of blocking immediately
-Rule-based Detection: Simple, explainable logic
-Session Memory: Tracks multi-turn conversations
-Safe Interaction: No sensitive data is ever shared
-
+Honeypot Design – Engage attackers instead of blocking
+Explainable Detection – Transparent rule-based logic
+Session Awareness – Multi-turn conversation tracking
+Safe Interaction – No sensitive data exposure
 ---
+
 
 ⚠️ Learnings
 API reliability is as important as logic
 Deployment behavior affects evaluation outcomes
-Strict response formats matter in automated systems
-Simplicity + clarity > over-engineering
-
+Strict response formats matter in automation
+Simplicity and clarity outperform over-engineering
 ---
 
-🔮 Future Improvements
-- AI-based response generation (LLM integration)
-- Advanced ML-based scam classification
-- Persistent database for sessions
-- Real-time dashboard for fraud analytics
 
+🔮 Future Improvements
+AI-based response generation (LLMs)
+Advanced ML-based scam classification
+Persistent database for session storage
+Real-time fraud analytics dashboard
 ---
 
 🛠️ Tech Stack
-- Python
-- FastAPI
-- Regex (pattern extraction)
-- Render (deployment)
-
+Python
+FastAPI
+Regex (pattern extraction)
+Render (deployment)
 ---
 
 
