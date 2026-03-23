@@ -36,8 +36,7 @@ Unlike traditional filters that block messages, this system:
 
 ## 🧩 System Architecture
 
-![Architecture Diagram]
-(./images/Architecture_Diagram.png)
+![Architecture Diagram](./Architecture_Diagram.png)
 
 ### Flow Explanation
 
@@ -97,10 +96,10 @@ https://scam-honeypot-api-9axe.onrender.com/hello
 
 📸 Screenshots
 ### Swagger UI (API Testing)
-![Swagger UI](./images/swagger-ui.png)
+![Swagger UI](./swagger-ui.png)
 
 ### Sample API Response
-![API Response](./images/api-response.png)
+![API Response](./api-response.png)
 
 
 ---
